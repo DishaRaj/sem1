@@ -1,0 +1,72 @@
+# sem1 
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+int main()
+{
+	char ch;
+	int clg,br,allot;
+	cout<<"enter no. of colleges";
+	cin>>clg;
+	string cpref;
+	string bpref;
+    string college[clg];
+    cout<<"\n enter no. of branch ";
+    cin>>br;
+    
+    string branch[br];
+    
+    cout<<"\n enter colleges : ";
+    for(int i=0;i<clg;i++)
+    cin>>college[i];
+    
+    cout<<"\n enter branch : ";
+    for(int i=0;i<br;i++)
+    cin>>branch[i];
+    
+    int vac[clg][br];
+    
+    for(int i=0;i<clg;i++)
+    {
+    	for(int j=0;j<br;j++)
+    	{
+    		cout<<"\n enter vaccancy of college "<<college[i]<<"and  "<<j<<"  branch ";
+    		cin>>vac[i][j];
+		}
+	}
+	//do{
+	
+	 cout<<"\n student seat allocation (y/n) ";
+    cin>>ch;
+ cout<<"\n enter college preference : ";
+    //for(int i=0;i<3;i++)
+    cin>>cpref;
+ cout<<"\n enter branch preference : ";
+   // for(int i=0;i<3;i++)
+    cin>>bpref;
+    
+    for(int i=0;i<clg;i++)
+    {
+    	for(int j=0;j<br;j++)
+    	{
+    	   //for(int k=0;k<3;k++)
+    	   //{
+    	   	 if((cpref.compare(college[i]))&&(bpref.compare(branch[i])==0)&&(vac[i][j]!=0))
+    	   	 {
+    	   	 allot=1;
+    	   	 vac[i][j]-- ;
+    	   	 break;
+				}
+    	   	 }
+		   }
+		
+	//}
+     if(allot==1)
+    cout<<"\n seat alloted";
+    else 
+    cout<<"seat not allotted";
+   
+//}while(ch=='y'||ch=='Y');
+    return 0;
+}
